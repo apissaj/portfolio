@@ -7,17 +7,18 @@ export const USER: User = {
   username: "hafizhmuzani",
   gender: "male",
   pronouns: "he/him",
-  bio: "Creating with code. IT Student at UDINUS.",
+  bio: "Junior full-stack developer from Semarang, Indonesia. I build web apps with React and Next.js, and I'm working on my own products, VPNX and Tempik.",
   flipSentences: [
-    "Creating with code. IT Student.",
-    "Web Developer.",
-    "Open source contributor.",
+    "React & Next.js Specialist",
+    "Full-stack Developer",
+    "IT Student @ UDINUS",
+    "Building VPNX & Tempik",
   ],
   address: "Semarang, Indonesia",
   phoneNumberB64: "KzYyIDgyMyAyNzIzIDk0MjE=", // +62 823 2723 9421
   emailB64: "aGFmaXpobXV6YW5pMDExQGdtYWlsLmNvbQ==", // hafizhmuzani011@gmail.com
   website: "https://hafizhmuzani.my.id",
-  jobTitle: "IT Student & Developer",
+  jobTitle: "Junior Full-Stack Developer",
   jobs: [
     {
       title: "IT Student",
@@ -30,14 +31,14 @@ export const USER: User = {
 
 Passionate about web development, custom automation tools, and open source projects.
 `,
-  avatar: "https://github.com/hafizhmuzani.png",
+  avatar: "/images/avatar-hafizh-ref5.png",
   avatarVariants: {
-    lightOff: "https://github.com/hafizhmuzani.png",
-    lightOn: "https://github.com/hafizhmuzani.png",
-    darkOff: "https://github.com/hafizhmuzani.png",
-    darkOn: "https://github.com/hafizhmuzani.png",
+    lightOff: "/images/avatar-hafizh-ref5.png",
+    lightOn: "/images/avatar-hafizh-ref5.png",
+    darkOff: "/images/avatar-hafizh-ref5.png",
+    darkOn: "/images/avatar-hafizh-ref5.png",
   },
-  ogImage: "https://github.com/hafizhmuzani.png",
+  ogImage: "/images/avatar-hafizh-ref5.png",
   namePronunciationUrl: "",
   timeZone: "Asia/Jakarta",
   keywords: ["hafizhmuzani", "hafizh muzani", "hafizmuzani"],

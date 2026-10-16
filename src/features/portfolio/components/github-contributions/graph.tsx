@@ -30,9 +30,9 @@ export function GitHubContributionGraph({
     <ContributionGraph
       className="mx-auto gap-4 py-4"
       data={data}
-      blockSize={12}
-      blockMargin={2}
-      blockRadius={0}
+      blockSize={9}
+      blockMargin={3}
+      blockRadius={2}
       aria-label="GitHub Contributions Graph"
     >
       <ContributionGraphCalendar

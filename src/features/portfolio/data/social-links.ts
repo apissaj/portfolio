@@ -8,8 +8,8 @@ import type { SocialProfile } from "@/features/portfolio/types/social-links"
 export const SOCIAL = {
   github: {
     title: "GitHub",
-    handle: "hafizhmuzani",
-    href: "https://github.com/hafizhmuzani",
+    handle: "apissaj",
+    href: "https://github.com/apissaj",
     sameAs: true,
   },
   linkedin: {

@@ -1,131 +1,66 @@
-import Image from "next/image"
 import { addQueryParams } from "@/utils/url"
-import { BoxIcon, InfinityIcon, LinkIcon } from "lucide-react"
+import { ArrowUpRightIcon } from "lucide-react"
 
 import { UTM_PARAMS } from "@/config/site"
-import { Tag } from "@/components/ui/tag"
-import {
-  Collapsible,
-  CollapsibleChevronsUpDownIcon,
-} from "@/components/base/collapsible-animated"
-import {
-  CollapsibleContent,
-  CollapsibleTrigger,
-} from "@/components/base/ui/collapsible"
-import {
-  Tooltip,
-  TooltipContent,
-  TooltipTrigger,
-} from "@/components/base/ui/tooltip"
-import { Prose } from "@/components/base/ui/typography"
 import { Markdown } from "@/components/markdown"
 
 import type { Project } from "../../types/projects"
 
-export function ProjectItem({
-  className,
-  project,
-}: {
-  className?: string
-  project: Project
-}) {
-  const { start, end } = project.period
+export function ProjectItem({ project }: { project: Project }) {
+  const { end } = project.period
   const isOngoing = !end
-  const isSinglePeriod = end === start
 
   return (
-    <Collapsible className={className} defaultOpen={project.isExpanded}>
-      <div className="group/project flex items-center hover:bg-accent-muted">
-        {project.logo ? (
-          <Image
-            src={project.logo}
-            alt={project.title}
-            width={32}
-            height={32}
-            quality={100}
-            className="mx-4 flex size-6 shrink-0 grayscale select-none group-hover/project:grayscale-0"
-            unoptimized
-            aria-hidden
-          />
-        ) : (
-          <div className="mx-4 flex size-6 shrink-0 items-center justify-center rounded-lg border border-muted-foreground/15 bg-muted text-muted-foreground ring-1 ring-line ring-offset-1 ring-offset-background select-none">
-            <BoxIcon className="size-4" />
+    <a
+      className="group/project relative flex flex-col gap-3 p-4"
+      href={addQueryParams(project.link, UTM_PARAMS)}
+      target="_blank"
+      rel="noopener"
+    >
+      <div className="relative h-52 w-full overflow-hidden rounded-2xl border border-line bg-zinc-50/70 sm:h-56 dark:bg-zinc-900/40">
+        <div className="absolute inset-0 flex items-center justify-center p-4 [perspective:1000px]">
+          <div className="flex h-[115%] w-[108%] flex-col overflow-hidden rounded-xl border border-zinc-200 bg-white shadow-lg shadow-zinc-900/5 transition-transform duration-500 ease-out [transform:rotateX(10deg)_rotateY(-10deg)_rotateZ(1.5deg)_scale(1.02)] group-hover/project:[transform:rotateX(4deg)_rotateY(-4deg)_rotateZ(0.5deg)_scale(1.06)] dark:border-zinc-800 dark:bg-zinc-900">
+            <div className="flex h-5 shrink-0 items-center gap-1.5 border-b border-zinc-200 bg-zinc-100/90 px-2.5 dark:border-zinc-700/80 dark:bg-zinc-800/90">
+              <span className="size-1.5 rounded-full bg-zinc-300" />
+              <span className="size-1.5 rounded-full bg-zinc-300" />
+              <span className="size-1.5 rounded-full bg-zinc-300" />
+            </div>
+            <div className="flex flex-1 items-center justify-center p-3 font-mono text-xs text-zinc-500">
+              {project.title}
+            </div>
           </div>
-        )}
-
-        <div className="flex-1 border-l border-dashed border-line">
-          <CollapsibleTrigger className="flex w-full items-center gap-2 p-4 pr-2 text-left">
-            <div className="flex-1">
-              <h3 className="mb-1 leading-snug font-medium text-balance">
-                {project.title}
-              </h3>
-
-              <dl className="text-sm text-muted-foreground">
-                <dt className="sr-only">Period</dt>
-                <dd className="flex items-center gap-0.5">
-                  <span>{start}</span>
-                  {!isSinglePeriod && (
-                    <>
-                      <span className="font-mono">—</span>
-                      {isOngoing ? (
-                        <InfinityIcon
-                          className="size-4.5 translate-y-[0.5px]"
-                          aria-label="Present"
-                        />
-                      ) : (
-                        <span>{end}</span>
-                      )}
-                    </>
-                  )}
-                </dd>
-              </dl>
-            </div>
-
-            <Tooltip>
-              <TooltipTrigger
-                render={
-                  <a
-                    className="relative flex size-6 shrink-0 items-center justify-center text-muted-foreground after:absolute after:-inset-2 hover:text-foreground"
-                    href={addQueryParams(project.link, UTM_PARAMS)}
-                    target="_blank"
-                    rel="noopener"
-                    aria-label="Open project"
-                  >
-                    <LinkIcon className="pointer-events-none size-4" />
-                  </a>
-                }
-              />
-              <TooltipContent>
-                <p>Open project</p>
-              </TooltipContent>
-            </Tooltip>
-
-            <div className="shrink-0 text-muted-foreground [&_svg]:size-4">
-              <CollapsibleChevronsUpDownIcon duration={0.15} />
-            </div>
-          </CollapsibleTrigger>
         </div>
       </div>
 
-      <CollapsibleContent className="overflow-hidden">
-        <div className="space-y-4 border-t border-line p-4">
-          {project.description && (
-            <Prose>
-              <Markdown>{project.description}</Markdown>
-            </Prose>
-          )}
-
-          {project.skills.length > 0 && (
-            <ul className="flex flex-wrap gap-1.5">
-              {project.skills.map((skill, index) => (
-                <li key={index} className="flex">
-                  <Tag>{skill}</Tag>
-                </li>
-              ))}
-            </ul>
-          )}
+      <div className="flex flex-col gap-1.5">
+        <div className="flex items-center justify-between gap-2">
+          <h3 className="flex items-center gap-2 leading-snug font-medium">
+            {project.title}
+            {isOngoing && (
+              <span
+                className="size-1.5 shrink-0 rounded-full bg-emerald-500"
+                aria-hidden
+              />
+            )}
+          </h3>
+          <ArrowUpRightIcon
+            className="size-4 shrink-0 text-zinc-400 transition-colors group-hover/project:text-zinc-900 dark:group-hover/project:text-zinc-100"
+            aria-hidden
+          />
         </div>
-      </CollapsibleContent>
-    </Collapsible>
+
+        {project.description && (
+          <div className="text-sm leading-relaxed text-zinc-600 dark:text-zinc-400 [&_p]:m-0">
+            <Markdown>{project.description}</Markdown>
+          </div>
+        )}
+
+        {project.skills.length > 0 && (
+          <p className="pt-1 font-mono text-xs text-zinc-500 dark:text-zinc-500">
+            {project.skills.join(" · ")}
+          </p>
+        )}
+      </div>
+    </a>
   )
 }

@@ -2,28 +2,28 @@ import type { Experience } from "../types/experiences"
 
 export const EXPERIENCES: Experience[] = [
   {
-    id: "udinus",
-    companyName: "Universitas Dian Nuswantoro (UDINUS)",
-    companyWebsite: "https://dinus.ac.id",
-    location: "Semarang, Indonesia",
-    locationType: "On-site",
-    isCurrentEmployer: true,
+    id: "self-employed",
+    companyName: "Self-Employed (Indonesia)",
+    companyLogo: "/images/self-employed-logo.png",
+    location: "Indonesia",
     positions: [
       {
-        id: "udinus-it",
-        title: "IT Student",
+        id: "freelance-web",
+        title: "Freelance Web Developer",
         employmentPeriod: {
-          start: "09.2023",
+          start: "09.2025",
         },
-        employmentType: "Full-time",
+        employmentType: "Freelance",
         description:
-          "Studying Information Technology, focusing on software development, modern web frameworks, and automation tools.",
+          "- Build responsive websites and landing pages with HTML, CSS, JavaScript, React, and Next.js.\n- Create reusable UI components using a mobile-first approach.\n- Connect front ends to REST APIs and Firebase (authentication and data storage).\n- Build and run my own products, Portalink and Whip.",
         skills: [
+          "HTML",
+          "CSS",
+          "JavaScript",
+          "React",
           "Next.js",
-          "Tailwind CSS",
-          "TypeScript",
-          "Docker",
-          "Automation",
+          "REST API",
+          "Firebase",
         ],
       },
     ],

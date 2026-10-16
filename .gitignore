@@ -43,3 +43,6 @@ next-env.d.ts
 
 # ncdai
 .ncdai
+
+# serena (MCP tooling, local-only)
+.serena/

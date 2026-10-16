@@ -13,7 +13,7 @@ export const SITE_INFO = {
 
 export const LICENSE = {
   name: "MIT License",
-  url: "https://github.com/hafizhmuzani/chanhdai.com/blob/main/LICENSE",
+  url: "https://github.com/apissaj/portfolio/blob/main/LICENSE",
 }
 
 export const META_THEME_COLORS = {
@@ -37,10 +37,10 @@ export const MOBILE_NAV: NavItem<Route>[] = [
 ]
 
 export const X_HANDLE = ""
-export const GITHUB_USERNAME = "hafizhmuzani"
-export const SOURCE_CODE_GITHUB_REPO = "hafizhmuzani/chanhdai.com"
+export const GITHUB_USERNAME = "apissaj"
+export const SOURCE_CODE_GITHUB_REPO = "apissaj/portfolio"
 export const SOURCE_CODE_GITHUB_URL =
-  "https://github.com/hafizhmuzani/chanhdai.com"
+  "https://github.com/apissaj/portfolio"
 
 export const SPONSORSHIP_URL = ""
 

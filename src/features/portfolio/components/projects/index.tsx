@@ -1,4 +1,3 @@
-import { CollapsibleList } from "@/components/collapsible-list"
 import {
   Panel,
   PanelHeader,
@@ -23,11 +22,11 @@ export function Projects() {
         </PanelTitle>
       </PanelHeader>
 
-      <CollapsibleList
-        items={PROJECTS}
-        max={4}
-        renderItem={(item) => <ProjectItem project={item} />}
-      />
+      <div className="grid grid-cols-1 divide-y md:grid-cols-2 md:divide-x md:divide-y-0 divide-border">
+        {PROJECTS.map((project) => (
+          <ProjectItem key={project.id} project={project} />
+        ))}
+      </div>
     </Panel>
   )
 }

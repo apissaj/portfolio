@@ -5,6 +5,25 @@ import { PanelTitleCopy } from "./panel-title-copy"
 
 const ID = "stack"
 
+const BRAND_COLORS: Record<string, string> = {
+  typescript: "#3178C6",
+  js: "#F7DF1E",
+  python: "#3776AB",
+  react: "#61DAFB",
+  tailwindcss: "#38BDF8",
+  nodejs: "#5FA04E",
+  postgresql: "#4169E1",
+  mongodb: "#47A248",
+  redis: "#DC382D",
+  nginx: "#009639",
+  claude: "#D97757",
+  gemini: "#4285F4",
+  git: "#F05032",
+  docker: "#2496ED",
+  figma: "#F24E1E",
+  ps: "#31A8FF",
+}
+
 export function TechStack() {
   return (
     <Panel id={ID}>
@@ -57,9 +76,16 @@ export function TechStack() {
                           href={item.href}
                           target="_blank"
                           rel="noopener"
-                          className="flex h-(--badge-height) items-center justify-center gap-1.25 rounded-full bg-zinc-50/80 px-2 font-mono text-xs text-foreground inset-ring-1 inset-ring-border dark:bg-zinc-900/80 [&_svg]:pointer-events-none [&_svg]:size-3.5 [&_svg]:shrink-0 [&_svg]:text-muted-foreground/80"
+                          className="flex h-(--badge-height) items-center justify-center gap-1.25 rounded-full bg-zinc-50/80 px-2 font-mono text-xs text-foreground inset-ring-1 inset-ring-border dark:bg-zinc-900/80 [&_svg]:pointer-events-none [&_svg]:size-3.5 [&_svg]:shrink-0"
                         >
-                          {item.icon}
+                          <span
+                            style={{
+                              color: BRAND_COLORS[item.key],
+                              fill: BRAND_COLORS[item.key],
+                            }}
+                          >
+                            {item.icon}
+                          </span>
                           {item.title}
                         </a>
                       </li>

@@ -1,18 +1,13 @@
-import { differenceInMonths, parse } from "date-fns"
-import { BriefcaseBusinessIcon, InfinityIcon } from "lucide-react"
+import { differenceInMonths, format, parse } from "date-fns"
+import { CodeXmlIcon, ChevronDownIcon } from "lucide-react"
 
 import { cn } from "@/lib/utils"
 import { Tag } from "@/components/ui/tag"
 import {
   Collapsible,
-  CollapsibleChevronsUpDownIcon,
-} from "@/components/base/collapsible-animated"
-import {
   CollapsibleContent,
   CollapsibleTrigger,
 } from "@/components/base/ui/collapsible"
-import { Separator } from "@/components/base/ui/separator"
-import { Prose } from "@/components/base/ui/typography"
 import { Markdown } from "@/components/markdown"
 import type { ExperiencePosition } from "@/features/portfolio/types/experiences"
 
@@ -28,102 +23,73 @@ export function ExperiencePositionItem({
   return (
     <Collapsible
       className="group/experience-position relative"
-      defaultOpen={position.isExpanded}
+      defaultOpen={position.isExpanded ?? true}
       disabled={!position.description}
     >
-      <div className="pointer-events-none absolute bottom-0 left-3 hidden size-4 bg-background group-last/experience-position:flex">
-        <span className="size-full -translate-y-2.25 rounded-bl-sm border-b border-l" />
-      </div>
-
       <CollapsibleTrigger
         className={cn(
-          "group block w-full text-left",
-          "relative before:absolute before:-top-1 before:-right-1 before:-bottom-1.5 before:left-7 before:-z-1 before:rounded-lg before:transition-[background-color] before:ease-out hover:before:bg-accent-muted",
-          "outline-none focus-visible:before:inset-ring-2 focus-visible:before:inset-ring-ring/50",
-          "data-disabled:before:content-none"
+          "group/trigger flex w-full cursor-pointer flex-col gap-1 rounded-lg p-1 text-left transition-colors",
+          "hover:bg-accent-muted outline-none focus-visible:ring-2 focus-visible:ring-ring/50",
+          "data-disabled:cursor-default data-disabled:hover:bg-transparent"
         )}
       >
-        <div className="relative z-1 mb-1 flex items-start gap-3 text-base">
-          <div
-            className={cn(
-              "flex size-6 shrink-0 items-center justify-center rounded-md",
-              "bg-muted text-muted-foreground",
-              "border border-muted-foreground/15 ring-1 ring-line ring-offset-1 ring-offset-background",
-              "[&_svg]:shrink-0 [&_svg:not([class*='size-'])]:size-4"
-            )}
-          >
-            {position.icon ?? <BriefcaseBusinessIcon />}
+        <div className="flex w-full items-center justify-between gap-2">
+          <div className="flex items-center gap-2.5">
+            <div className="flex size-6 shrink-0 items-center justify-center rounded-md border border-zinc-200 bg-zinc-100 text-zinc-600 dark:border-zinc-700 dark:bg-zinc-800 dark:text-zinc-400 [&_svg]:size-3.5">
+              {position.icon ?? <CodeXmlIcon aria-hidden />}
+            </div>
+            <span className="text-base font-medium text-zinc-900 dark:text-zinc-100">
+              {position.title}
+            </span>
           </div>
 
-          <h4 className="flex-1 font-medium text-balance">{position.title}</h4>
-
-          <div className="shrink-0 text-muted-foreground group-data-disabled:hidden [&_svg]:h-lh [&_svg]:w-4">
-            <CollapsibleChevronsUpDownIcon duration={0.15} />
-          </div>
+          <ChevronDownIcon
+            className="size-4 shrink-0 text-zinc-400 transition-transform duration-200 dark:text-zinc-500 group-data-open/trigger:rotate-180 group-data-disabled/trigger:hidden"
+            aria-hidden
+          />
         </div>
 
-        <dl className="flex items-center gap-2 pl-9 text-sm text-muted-foreground">
+        <div className="flex items-center gap-2 pl-8 text-sm text-zinc-500 dark:text-zinc-400">
           {position.employmentType && (
             <>
-              <div>
-                <dt className="sr-only">Employment Type</dt>
-                <dd>{position.employmentType}</dd>
-              </div>
-              <Separator
-                className="data-vertical:h-4 data-vertical:self-center"
-                orientation="vertical"
-              />
+              <span>{position.employmentType}</span>
+              <span className="text-zinc-300 dark:text-zinc-700" aria-hidden>
+                |
+              </span>
             </>
           )}
 
-          <div>
-            <dt className="sr-only">Employment Period</dt>
-            <dd className="flex items-center gap-0.5 tabular-nums">
-              <span>{start}</span>
-              <span className="font-mono">—</span>
-              {isOngoing ? (
-                <InfinityIcon
-                  className="size-4.5 translate-y-[0.5px]"
-                  aria-label="Present"
-                  strokeWidth={1.5}
-                />
-              ) : (
-                <span>{end}</span>
-              )}
-            </dd>
-          </div>
+          <span>
+            {formatPeriod(start)} — {isOngoing ? "Present" : formatPeriod(end)}
+          </span>
 
           {duration && (
             <>
-              <Separator
-                className="data-vertical:h-4 data-vertical:self-center"
-                orientation="vertical"
-              />
-              <div>
-                <dt className="sr-only">Duration</dt>
-                <dd className="tabular-nums">{duration}</dd>
-              </div>
+              <span className="text-zinc-300 dark:text-zinc-700" aria-hidden>
+                |
+              </span>
+              <span>{duration}</span>
             </>
           )}
-        </dl>
+        </div>
       </CollapsibleTrigger>
 
       <CollapsibleContent className="overflow-hidden">
         {position.description && (
-          <Prose className="pt-2 pl-9">
-            <Markdown>{position.description}</Markdown>
-          </Prose>
+          <div className="pr-2 pt-2 pb-1 pl-8">
+            <div className="text-sm text-muted-foreground [&_p]:m-0 [&_ul]:m-0 [&_ul]:flex [&_ul]:flex-col [&_ul]:gap-1.5 [&_li]:flex [&_li]:items-start [&_li]:gap-2 [&_li]:before:mt-px [&_li]:before:shrink-0 [&_li]:before:text-zinc-400 [&_li]:before:select-none [&_li]:before:content-['•']">
+              <Markdown>{position.description}</Markdown>
+            </div>
+          </div>
         )}
       </CollapsibleContent>
 
       {Array.isArray(position.skills) && position.skills.length > 0 && (
-        <ul className="flex flex-wrap gap-1.5 pt-3 pl-9">
+        <div className="flex flex-wrap items-center gap-1.5 pt-2.5 pl-8">
           {position.skills.map((skill, index) => (
-            <li key={index} className="flex">
-              <Tag>{skill}</Tag>
-            </li>
+            <Tag key={index}>{skill}</Tag>
           ))}
-        </ul>
+        </div>
       )}
     </Collapsible>
   )
@@ -133,34 +99,41 @@ function formatDuration(start: string, end?: string): string {
   const startHasMonth = start.includes(".")
   const endHasMonth = end ? end.includes(".") : true
 
-  // Both year-only: granularity is years, no month arithmetic needed.
   if (!startHasMonth && end && !endHasMonth) {
     const years = parseInt(end, 10) - parseInt(start, 10)
     if (years <= 0) {
       return ""
     }
-    return `${years}y`
+    return `${years} yr`
   }
 
   const startDate = parsePeriodDate(start, "first")
   const endDate = end ? parsePeriodDate(end, "last") : new Date()
 
-  // +1 to count both the start and end months inclusively.
   const totalMonths = differenceInMonths(endDate, startDate) + 1
   if (totalMonths <= 0) {
     return ""
   }
 
-  if (totalMonths < 12) {
-    return `${totalMonths}m`
-  }
-
   const years = Math.floor(totalMonths / 12)
   const months = totalMonths % 12
-  if (months === 0) {
-    return `${years}y`
+
+  const parts: string[] = []
+  if (years > 0) {
+    parts.push(`${years} yr`)
   }
-  return `${years}y ${months}m`
+  if (months > 0) {
+    parts.push(`${months} mo`)
+  }
+
+  return parts.join(" ")
+}
+
+function formatPeriod(value: string): string {
+  if (!value.includes(".")) {
+    return value
+  }
+  return format(parse(value, "MM.yyyy", new Date()), "MMM yyyy")
 }
 
 function parsePeriodDate(str: string, fallbackMonth: "first" | "last"): Date {

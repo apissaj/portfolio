@@ -22,7 +22,7 @@ const MAX = 3
 
 export function Experiences() {
   return (
-    <Panel id={ID}>
+    <Panel id={ID} className="screen-line-top-none">
       <PanelHeader>
         <PanelTitle>
           <a href={`#${ID}`}>Experience</a>
@@ -30,13 +30,13 @@ export function Experiences() {
         </PanelTitle>
       </PanelHeader>
 
-      <div className="pr-2 pl-4">
+      <div className="p-4">
         <ExperienceList experiences={EXPERIENCES.slice(0, MAX)} />
       </div>
 
       {EXPERIENCES.length > MAX && (
         <Collapsible className="group/collapsible">
-          <CollapsibleContent render={<div className="pr-2 pl-4" />}>
+          <CollapsibleContent render={<div className="p-4" />}>
             <ExperienceList experiences={EXPERIENCES.slice(MAX)} />
           </CollapsibleContent>
 
@@ -69,10 +69,10 @@ export function Experiences() {
 
 function ExperienceList({ experiences }: { experiences: Experience[] }) {
   return (
-    <>
+    <div className="flex flex-col gap-6">
       {experiences.map((experience) => (
         <ExperienceItem key={experience.id} experience={experience} />
       ))}
-    </>
+    </div>
   )
 }

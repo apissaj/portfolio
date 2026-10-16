@@ -10,30 +10,32 @@ export function ExperienceItem({ experience }: { experience: Experience }) {
   return (
     <div
       id={`experience-${experience.id}`}
-      className="group/experience screen-line-bottom scroll-mt-14 space-y-4 py-4"
+      className="group/experience scroll-mt-14 space-y-3 py-4"
     >
-      <div className="flex items-start gap-3 sm:items-center">
-        <div className="flex size-6 shrink-0 items-center justify-center select-none [&_svg]:pointer-events-none [&_svg]:shrink-0 [&_svg]:text-muted-foreground [&_svg:not([class*='size-'])]:size-5">
-          {experience.companyLogo ? (
+      <div className="flex items-center gap-3">
+        {experience.companyLogo ? (
+          <div className="flex size-6 shrink-0 overflow-hidden rounded-full border border-zinc-200 bg-zinc-100 dark:border-zinc-700 dark:bg-zinc-800">
             <Image
               src={experience.companyLogo}
               alt={`${experience.companyName} logo`}
               width={24}
               height={24}
               quality={100}
-              className="rounded-full grayscale transition-[filter] duration-300 ease-[cubic-bezier(0.42,0,0.58,1)] group-hover/experience:grayscale-0"
+              className="size-full object-cover"
               unoptimized
               aria-hidden
             />
-          ) : (
-            (experience.companyIcon ?? (
+          </div>
+        ) : (
+          <div className="ml-1.5 flex size-2 shrink-0 items-center justify-center">
+            {experience.companyIcon ?? (
               <span className="flex size-2 rounded-full bg-zinc-300 dark:bg-zinc-600" />
-            ))
-          )}
-        </div>
+            )}
+          </div>
+        )}
 
-        <div className="flex min-w-0 flex-1 flex-col gap-x-3 gap-y-1 pr-1 sm:flex-row sm:items-baseline sm:justify-between">
-          <h3 className="text-xl/6 font-medium">
+        <div className="flex min-w-0 flex-1 flex-col gap-x-3 gap-y-1 sm:flex-row sm:items-baseline sm:justify-between">
+          <h3 className="text-lg/6 font-medium sm:text-xl/6">
             {experience.companyWebsite ? (
               <a
                 className="link"
@@ -48,13 +50,17 @@ export function ExperienceItem({ experience }: { experience: Experience }) {
             )}
           </h3>
 
-          {experience.location && experience.locationType && (
+          {experience.location && (
             <dl className="flex min-w-0 items-center gap-1.5 text-sm whitespace-nowrap text-muted-foreground">
               <dt className="sr-only">Location</dt>
               <dd className="truncate">{experience.location}</dd>
 
-              <dt className="sr-only">Location type</dt>
-              <dd>({experience.locationType})</dd>
+              {experience.locationType && (
+                <>
+                  <dt className="sr-only">Location type</dt>
+                  <dd>({experience.locationType})</dd>
+                </>
+              )}
 
               {experience.isCurrentEmployer && (
                 <>
@@ -73,7 +79,7 @@ export function ExperienceItem({ experience }: { experience: Experience }) {
         </div>
       </div>
 
-      <div className="relative space-y-4 before:absolute before:left-3 before:h-full before:w-px before:bg-border">
+      <div className="relative space-y-4 pl-4 before:absolute before:top-0 before:left-[11px] before:h-[calc(100%-11px)] before:w-4 before:rounded-bl-lg before:border-b before:border-l before:border-line">
         {experience.positions.map((position) => (
           <ExperiencePositionItem key={position.id} position={position} />
         ))}
