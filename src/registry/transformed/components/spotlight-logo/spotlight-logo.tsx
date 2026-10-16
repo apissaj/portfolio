@@ -11,9 +11,6 @@ import {
   useTransform,
 } from "motion/react"
 
-import { metalClickSound } from "@/lib/soundcn/metal-click"
-import { useSound } from "@/hooks/soundcn/use-sound"
-
 const transition: Transition = {
   type: "spring",
   mass: 0.5,
@@ -21,19 +18,6 @@ const transition: Transition = {
   stiffness: 200,
 }
 
-/**
- * An SVG mark whose outline is traced by a gradient highlight that follows the
- * cursor, paired with a springy press effect and a tactile click sound.
- *
- * Swap the SVG paths below for your own artwork. The interaction is driven by:
- * - a `radialGradient` whose center springs toward the pointer (the spotlight),
- *   reused as a second stroke layered over the base outline.
- * - `whileTap="pressed"` morphing the path `d` values between two states.
- *
- * The demo mark was designed by ncdai on Figma with the
- * [Fast Isometric Plugin](https://www.figma.com/community/plugin/1249759048471403961).
- * Inspired by tailwindcss.com.
- */
 export function SpotlightLogo() {
   const id = useId()
   const ids = {
@@ -44,8 +28,6 @@ export function SpotlightLogo() {
   }
 
   const ref = useRef<SVGSVGElement>(null)
-
-  const [play] = useSound(metalClickSound)
 
   const shouldReduceMotion = useReducedMotion()
   const isInView = useInView(ref, { margin: "80px" })
@@ -66,13 +48,8 @@ export function SpotlightLogo() {
   })
 
   useEffect(() => {
-    if (shouldReduceMotion || !isInView) {
-      return
-    }
-
-    if (window.matchMedia("(hover: none)").matches) {
-      return
-    }
+    if (shouldReduceMotion || !isInView) return
+    if (window.matchMedia("(hover: none)").matches) return
 
     const handleMouseMove = (e: MouseEvent) => {
       mouseX.set(e.clientX / window.innerWidth)
@@ -80,10 +57,7 @@ export function SpotlightLogo() {
     }
 
     window.addEventListener("mousemove", handleMouseMove)
-
-    return () => {
-      window.removeEventListener("mousemove", handleMouseMove)
-    }
+    return () => window.removeEventListener("mousemove", handleMouseMove)
   }, [shouldReduceMotion, isInView, mouseX, mouseY])
 
   return (
@@ -96,7 +70,6 @@ export function SpotlightLogo() {
       aria-hidden
       initial="normal"
       whileTap="pressed"
-      onTap={() => play()}
     >
       <defs>
         <pattern
@@ -107,70 +80,74 @@ export function SpotlightLogo() {
           height="10"
           patternUnits="userSpaceOnUse"
         >
-          <path
-            d="M-1 1l2 -2M0 10l10 -10M9 11l2 -2"
-            stroke="var(--pattern)"
-            strokeWidth="1"
-          />
+          <path d="M-1 1l2 -2M0 10l10 -10M9 11l2 -2" stroke="var(--pattern)" strokeWidth="1" />
         </pattern>
 
+        {/* H and M isometric top faces (fill) */}
         <motion.g
           id={ids.faceFill}
           variants={{
-            normal: {
-              transform: "translate(0px, 0px)",
-            },
-            pressed: {
-              transform: "translate(0px, 16px)",
-            },
+            normal: { transform: "translate(0px, 0px)" },
+            pressed: { transform: "translate(0px, 16px)" },
           }}
           transition={transition}
         >
-          <path d="M333.05 256.58L222.20 320.58L166.78 288.58L277.63 224.58L333.05 256.58Z" />
-          <path d="M388.48 32.58L277.63 96.58L388.48 160.58L499.33 96.58L554.76 128.58L388.48 224.58L166.78 96.58L333.05 0.58L388.48 32.58Z" />
-          <path d="M166.78 288.58L111.35 320.58L0.50 256.58L55.93 224.58L166.78 288.58Z" />
-          <path d="M554.76 64.58L499.33 96.58L388.48 32.58L443.90 0.58L554.76 64.58Z" />
-          <path d="M166.78 160.58L55.93 224.58L0.50 192.58L111.35 128.58L166.78 160.58Z" />
+          {/* H Left Column Top */}
+          <path d="M120 180 L60 215 L0 180 L60 145 Z" />
+          {/* H Right Column Top */}
+          <path d="M240 110 L180 145 L120 110 L180 75 Z" />
+          {/* H Crossbar Top */}
+          <path d="M180 145 L120 180 L60 145 L120 110 Z" />
+
+          {/* M Left Column Top */}
+          <path d="M400 180 L340 215 L280 180 L340 145 Z" />
+          {/* M Middle Column Top */}
+          <path d="M460 145 L400 180 L340 145 L400 110 Z" />
+          {/* M Right Column Top */}
+          <path d="M520 110 L460 145 L400 110 L460 75 Z" />
         </motion.g>
 
+        {/* H and M isometric side/bottom stroke lines */}
         <motion.path
           id={ids.stroke}
           variants={{
             normal: {
               d: [
-                // C
-                "M28.21 240.58 L0.50 224.58 V192.58 L111.35 128.58 L166.78 160.58 V192.58 L83.64 240.58",
-                "M166.78 160.58 L0.50 256.58 V288.58 L111.35 352.58 L166.78 320.58 L222.20 352.58 L333.05 288.58 V256.58 L277.63 224.58 L166.78 288.58 L0.50 192.58",
-                "M0.50 256.58 L111.35 320.58 L166.78 288.58 L222.20 320.58 L333.05 256.58",
-                "M111.35 320.58 V352.58",
-                "M166.78 288.58 V320.58",
-                "M222.20 320.58 V352.58",
-                // D
-                "M499.33 96.58 L554.76 128.58 V160.58 L388.48 256.58 L166.78 128.58 V96.58 L333.05 0.58 L499.33 96.58",
-                "M166.78 96.58 L388.48 224.58 L554.76 128.58",
-                "M527.04 112.58 L554.76 96.58 V64.58 L443.90 0.58 L277.63 96.58 L388.48 160.58 L554.76 64.58",
-                "M305.34 112.58 L388.48 64.58 L471.62 112.58",
-                "M388.48 224.58 V256.58",
-                "M388.48 32.58 V64.58",
-              ].join(""),
+                // H
+                "M0 180 L60 215 L120 180 L180 145 L240 110",
+                "M60 215 V285 L120 250 V180",
+                "M180 145 V215 L240 180 V110",
+                "M0 180 V250 L60 285",
+                "M120 110 V180",
+                "M120 250 L180 215",
+                // M
+                "M280 180 L340 215 L400 180 L460 145 L520 110",
+                "M280 180 V250 L340 285 V215",
+                "M340 285 L400 250 V180",
+                "M460 145 V215 L520 180 V110",
+                "M400 250 L460 215",
+                "M340 145 V215",
+                "M400 110 V180",
+              ].join(" "),
             },
             pressed: {
               d: [
-                // C
-                "M42.07 248.58 L0.50 224.58 V208.58 L111.35 144.58 L166.78 176.58 V192.58 L69.78 248.58",
-                "M166.78 176.58 L0.5 272.58 V288.58 L111.35 352.58 L166.78 320.58 L222.20 352.58 L333.05 288.58 V272.58 L277.63 240.58 L166.78 304.58 L0.5 208.58",
-                "M0.5 272.58 L111.35 336.58 L166.78 304.58 L222.20 336.58 L333.05 272.58",
-                "M111.35 336.58 V352.58",
-                "M166.78 304.58 V320.58",
-                "M222.20 336.58 V352.58",
-                // D
-                "M499.33 112.58 L554.76 144.58 V160.58 L388.48 256.58 L166.78 128.58 V112.58 L333.05 16.58 L499.33 112.58",
-                "M166.78 112.58 L388.48 240.58 L554.76 144.58",
-                "M513.19 120.58 L554.76 96.58 V80.58 L443.90 16.58 L277.63 112.58 L388.48 176.58 L554.76 80.58",
-                "M291.48 120.58 L388.48 64.58 L485.47 120.58",
-                "M388.48 240.58 V256.58",
-                "M388.48 48.58 V64.58",
-              ].join(""),
+                // H pressed (Y + 16)
+                "M0 196 L60 231 L120 196 L180 161 L240 126",
+                "M60 231 V285 L120 250 V196",
+                "M180 161 V215 L240 180 V126",
+                "M0 196 V250 L60 285",
+                "M120 126 V196",
+                "M120 250 L180 215",
+                // M pressed (Y + 16)
+                "M280 196 L340 231 L400 196 L460 161 L520 126",
+                "M280 196 V250 L340 285 V231",
+                "M340 285 L400 250 V196",
+                "M460 161 V215 L520 180 V126",
+                "M400 250 L460 215",
+                "M340 161 V215",
+                "M400 126 V196",
+              ].join(" "),
             },
           }}
           transition={transition}
@@ -183,71 +160,50 @@ export function SpotlightLogo() {
           r="200"
           gradientUnits="userSpaceOnUse"
         >
-          <stop
-            className="dark:[stop-color:#fff]"
-            stopColor="var(--color-zinc-700)"
-          />
-          <stop
-            className="dark:[stop-color:var(--color-zinc-600)]"
-            offset="1"
-            stopColor="var(--color-zinc-400)"
-            stopOpacity="0"
-          />
+          <stop className="dark:[stop-color:#fff]" stopColor="var(--color-zinc-700)" />
+          <stop className="dark:[stop-color:var(--color-zinc-600)]" offset="1" stopColor="var(--color-zinc-400)" stopOpacity="0" />
         </motion.radialGradient>
       </defs>
 
+      {/* Shadow / Base */}
       <g className="fill-background" fillRule="evenodd" clipRule="evenodd">
+        {/* H shadow */}
         <motion.path
           variants={{
-            normal: {
-              d: "M166.78 160.58L55.93 224.58L0.50 192.58V224.58L55.93 256.58L166.78 192.58V160.58Z",
-            },
-            pressed: {
-              d: "M166.78 176.58L55.93 240.58L0.50 208.58V224.58L55.93 256.58L166.78 192.58V176.58Z",
-            },
+            normal: { d: "M0 180 L60 215 V285 L0 250 Z" },
+            pressed: { d: "M0 196 L60 231 V285 L0 250 Z" },
           }}
           transition={transition}
         />
         <motion.path
           variants={{
-            normal: {
-              d: "M166.78 288.58L111.35 320.58L0.50 256.58V288.58L111.35 352.58L166.78 320.58L222.20 352.58L333.05 288.58V256.58L222.20 320.58L166.78 288.58Z",
-            },
-            pressed: {
-              d: "M166.78 304.58L111.35 336.58L0.50 272.58V288.58L111.35 352.58L166.78 320.58L222.20 352.58L333.05 288.58V272.58L222.20 336.58L166.78 304.58Z",
-            },
+            normal: { d: "M120 180 L180 145 V215 L120 250 Z" },
+            pressed: { d: "M120 196 L180 161 V215 L120 250 Z" },
+          }}
+          transition={transition}
+        />
+        {/* M shadow */}
+        <motion.path
+          variants={{
+            normal: { d: "M280 180 L340 215 V285 L280 250 Z" },
+            pressed: { d: "M280 196 L340 231 V285 L280 250 Z" },
           }}
           transition={transition}
         />
         <motion.path
           variants={{
-            normal: {
-              d: "M388.48 224.58L166.78 96.58V128.58L388.48 256.58L554.76 160.58V128.58L388.48 224.58Z",
-            },
-            pressed: {
-              d: "M388.48 240.58L166.78 112.58V128.58L388.48 256.58L554.76 160.58V144.58L388.48 240.58Z",
-            },
-          }}
-          transition={transition}
-        />
-        <motion.path
-          variants={{
-            normal: {
-              d: "M388.48 32.58L277.63 96.58V128.58L388.48 64.58L499.33 128.58L554.75 96.58V64.58L499.33 96.58L388.48 32.58Z",
-            },
-            pressed: {
-              d: "M388.48 48.58L277.63 112.58V128.58L388.48 64.58L499.33 128.58L554.75 96.58V80.58L499.33 112.58L388.48 48.58Z",
-            },
+            normal: { d: "M400 180 L460 145 V215 L400 250 Z" },
+            pressed: { d: "M400 196 L460 161 V215 L400 250 Z" },
           }}
           transition={transition}
         />
       </g>
 
+      {/* Use layers */}
       <use href={`#${ids.faceFill}`} className="fill-background" />
       <use href={`#${ids.faceFill}`} fill={`url(#${ids.facePattern})`} />
-
-      <use href={`#${ids.stroke}`} stroke="var(--stroke)" />
-      <use href={`#${ids.stroke}`} stroke={`url(#${ids.radialGradient})`} />
+      <use href={`#${ids.stroke}`} stroke="var(--stroke)" strokeWidth="2" strokeLinejoin="round" />
+      <use href={`#${ids.stroke}`} stroke={`url(#${ids.radialGradient})`} strokeWidth="2" strokeLinejoin="round" />
     </motion.svg>
   )
 }

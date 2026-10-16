@@ -1,5 +1,3 @@
-import { formatIncompletePhoneNumber } from "@/lib/libphonenumber"
-
 export function decodeEmail(email: string) {
   return atob(email)
 }
@@ -9,7 +7,9 @@ export function decodePhoneNumber(phone: string) {
 }
 
 export function formatPhoneNumber(phone: string) {
-  return formatIncompletePhoneNumber(phone)
+  // The number is stored already formatted (e.g. "+62 823 2723 9421") in user.ts,
+  // so return it verbatim instead of re-formatting via the Vietnam-only metadata.
+  return phone
 }
 
 const XML_ESCAPES: Record<string, string> = {
