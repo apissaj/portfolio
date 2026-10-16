@@ -67,8 +67,13 @@ export function Testimonials() {
         <PanelTitle>
           Trusted by
           <span className="block sm:hidden" /> top builders on{" "}
-          <a href={SOCIAL.x.href} target="_blank" rel="noopener" aria-label="X">
-            𝕏
+          <a
+            href={SOCIAL.github.href}
+            target="_blank"
+            rel="noopener"
+            aria-label="GitHub"
+          >
+            GitHub
           </a>
         </PanelTitle>
       </PanelHeader>
