@@ -14,6 +14,6 @@ export const lib: Registry["items"] = [
       },
     ],
     categories: ["utilities"],
-    docs: "https://hafizhmuzani.my.id/components/haptic-feedback",
+    docs: "https://hafizhhh.dev/components/haptic-feedback",
   },
 ]

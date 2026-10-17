@@ -98,13 +98,15 @@ export const Index: Record<string, any> = {`
     {
       $schema: "https://ui.shadcn.com/schema/registry.json",
       name: "hafizhmuzani",
-            homepage: "https://hafizhmuzani.my.id/components",
+      homepage: "https://hafizhhh.dev/components",
       items: registry.items
         .filter((item) => item.type !== "registry:example")
         .map((item) => {
           return {
             ...item,
-            author: item.author ?? "Hafizh Muzani <hafizhmuzani@users.noreply.github.com>",
+            author:
+              item.author ??
+              "Hafizh Muzani <hafizhmuzani@users.noreply.github.com>",
             files:
               item.files?.map((file) => {
                 if (file.path.startsWith("src/")) {

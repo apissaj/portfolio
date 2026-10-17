@@ -11,7 +11,7 @@ export default function BrandAssetsMenuDemo() {
         logomark={<ChanhDaiMark />}
         logomarkSVG={LOGOMARK_SVG}
         logotypeSVG={LOGOTYPE_SVG}
-        brandGuidelinesURL="https://hafizhmuzani.my.id/blog/hafizh-brand"
+        brandGuidelinesURL="https://hafizhhh.dev/blog/hafizh-brand"
         brandAssetsURL="https://assets.chanhdai.com/chanhdai-brand.zip"
       >
         <Link href="/" aria-label="Home">

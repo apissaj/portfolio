@@ -3,7 +3,7 @@ import { describe, expect, it } from "vitest"
 
 describe("urlToName", () => {
   it("strips https:// scheme", () => {
-    expect(urlToName("https://hafizhmuzani.my.id")).toBe("hafizhmuzani.my.id")
+    expect(urlToName("https://hafizhhh.dev")).toBe("hafizhhh.dev")
   })
 
   it("strips http:// scheme and keeps path", () => {
@@ -15,7 +15,7 @@ describe("urlToName", () => {
   })
 
   it("leaves a bare host unchanged", () => {
-    expect(urlToName("hafizhmuzani.my.id")).toBe("hafizhmuzani.my.id")
+    expect(urlToName("hafizhhh.dev")).toBe("hafizhhh.dev")
   })
 })
 

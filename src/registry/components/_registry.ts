@@ -17,7 +17,7 @@ export const components: Registry["items"] = [
       },
     ],
     categories: ["controls"],
-    docs: "https://hafizhmuzani.my.id/components/theme-switcher",
+    docs: "https://hafizhhh.dev/components/theme-switcher",
   },
   {
     name: "text-flip",
@@ -34,7 +34,7 @@ export const components: Registry["items"] = [
       },
     ],
     categories: ["text-effects"],
-    docs: "https://hafizhmuzani.my.id/components/text-flip",
+    docs: "https://hafizhhh.dev/components/text-flip",
   },
   {
     name: "apple-hello-effect",
@@ -50,7 +50,7 @@ export const components: Registry["items"] = [
       },
     ],
     categories: ["text-effects"],
-    docs: "https://hafizhmuzani.my.id/components/apple-hello-effect",
+    docs: "https://hafizhhh.dev/components/apple-hello-effect",
   },
   {
     name: "apple-hello-effect-hindi",
@@ -66,7 +66,7 @@ export const components: Registry["items"] = [
       },
     ],
     categories: ["text-effects"],
-    docs: "https://hafizhmuzani.my.id/components/apple-hello-effect",
+    docs: "https://hafizhhh.dev/components/apple-hello-effect",
   },
   {
     name: "apple-hello-effect-spanish",
@@ -82,7 +82,7 @@ export const components: Registry["items"] = [
       },
     ],
     categories: ["text-effects"],
-    docs: "https://hafizhmuzani.my.id/components/apple-hello-effect",
+    docs: "https://hafizhhh.dev/components/apple-hello-effect",
   },
   {
     name: "apple-hello-effect-vietnamese",
@@ -98,7 +98,7 @@ export const components: Registry["items"] = [
       },
     ],
     categories: ["text-effects"],
-    docs: "https://hafizhmuzani.my.id/components/apple-hello-effect",
+    docs: "https://hafizhhh.dev/components/apple-hello-effect",
   },
   {
     name: "wheel-picker",
@@ -115,7 +115,7 @@ export const components: Registry["items"] = [
       },
     ],
     categories: ["controls"],
-    docs: "https://hafizhmuzani.my.id/components/react-wheel-picker",
+    docs: "https://hafizhhh.dev/components/react-wheel-picker",
   },
   {
     name: "chevrons-up-down-icon",
@@ -131,7 +131,7 @@ export const components: Registry["items"] = [
       },
     ],
     categories: ["effects"],
-    docs: "https://hafizhmuzani.my.id/components/chevrons-up-down-icon",
+    docs: "https://hafizhhh.dev/components/chevrons-up-down-icon",
   },
   {
     name: "typography",
@@ -189,7 +189,7 @@ export const components: Registry["items"] = [
       },
     ],
     categories: ["marketing"],
-    docs: "https://hafizhmuzani.my.id/components/work-experience-component",
+    docs: "https://hafizhhh.dev/components/work-experience-component",
   },
   {
     name: "shimmering-text",
@@ -205,7 +205,7 @@ export const components: Registry["items"] = [
       },
     ],
     categories: ["text-effects"],
-    docs: "https://hafizhmuzani.my.id/components/shimmering-text",
+    docs: "https://hafizhhh.dev/components/shimmering-text",
   },
   {
     name: "slide-to-unlock",
@@ -223,7 +223,7 @@ export const components: Registry["items"] = [
       },
     ],
     categories: ["controls"],
-    docs: "https://hafizhmuzani.my.id/components/slide-to-unlock",
+    docs: "https://hafizhhh.dev/components/slide-to-unlock",
   },
   {
     name: "testimonials-marquee",
@@ -235,7 +235,7 @@ export const components: Registry["items"] = [
       getRegistryItemUrl("testimonial"),
     ],
     categories: ["marketing"],
-    docs: "https://hafizhmuzani.my.id/components/testimonials-marquee",
+    docs: "https://hafizhhh.dev/components/testimonials-marquee",
   },
   {
     name: "testimonial",
@@ -251,7 +251,7 @@ export const components: Registry["items"] = [
       },
     ],
     categories: ["marketing"],
-    docs: "https://hafizhmuzani.my.id/components/testimonial",
+    docs: "https://hafizhhh.dev/components/testimonial",
   },
   {
     name: "github-stars",
@@ -268,7 +268,7 @@ export const components: Registry["items"] = [
       },
     ],
     categories: ["data-display"],
-    docs: "https://hafizhmuzani.my.id/components/github-stars",
+    docs: "https://hafizhhh.dev/components/github-stars",
   },
   {
     name: "scroll-fade-effect",
@@ -366,7 +366,7 @@ export const components: Registry["items"] = [
       },
     },
     categories: ["effects"],
-    docs: "https://hafizhmuzani.my.id/components/scroll-fade-effect",
+    docs: "https://hafizhhh.dev/components/scroll-fade-effect",
   },
   {
     name: "consent-manager",
@@ -384,7 +384,7 @@ export const components: Registry["items"] = [
       },
     ],
     categories: ["utilities"],
-    docs: "https://hafizhmuzani.my.id/components/consent-manager",
+    docs: "https://hafizhhh.dev/components/consent-manager",
   },
   {
     name: "copy-button",
@@ -407,7 +407,7 @@ export const components: Registry["items"] = [
       },
     ],
     categories: ["utilities"],
-    docs: "https://hafizhmuzani.my.id/components/copy-button",
+    docs: "https://hafizhhh.dev/components/copy-button",
   },
   {
     name: "code-block-command",
@@ -447,7 +447,7 @@ export const components: Registry["items"] = [
       },
     },
     categories: ["data-display"],
-    docs: "https://hafizhmuzani.my.id/components/code-block-command",
+    docs: "https://hafizhhh.dev/components/code-block-command",
   },
   {
     name: "testimonial-spotlight",
@@ -463,7 +463,7 @@ export const components: Registry["items"] = [
       },
     ],
     categories: ["marketing"],
-    docs: "https://hafizhmuzani.my.id/components/testimonial-spotlight",
+    docs: "https://hafizhhh.dev/components/testimonial-spotlight",
   },
   {
     name: "glow-card-grid",
@@ -492,7 +492,7 @@ export const components: Registry["items"] = [
       },
     ],
     categories: ["typography"],
-    docs: "https://hafizhmuzani.my.id/components/middle-truncation",
+    docs: "https://hafizhhh.dev/components/middle-truncation",
   },
   {
     name: "twemoji",
@@ -523,7 +523,7 @@ export const components: Registry["items"] = [
       },
     },
     categories: ["typography"],
-    docs: "https://hafizhmuzani.my.id/components/twemoji",
+    docs: "https://hafizhhh.dev/components/twemoji",
   },
   {
     name: "elastic-slider",
@@ -541,7 +541,7 @@ export const components: Registry["items"] = [
       },
     ],
     categories: ["controls"],
-    docs: "https://hafizhmuzani.my.id/components/elastic-slider",
+    docs: "https://hafizhhh.dev/components/elastic-slider",
   },
   {
     name: "contribution-graph",
@@ -591,7 +591,7 @@ export const components: Registry["items"] = [
       },
     },
     categories: ["data-display"],
-    docs: "https://hafizhmuzani.my.id/components/github-contributions",
+    docs: "https://hafizhhh.dev/components/github-contributions",
   },
   {
     name: "toc-minimap",
@@ -608,7 +608,7 @@ export const components: Registry["items"] = [
       },
     ],
     categories: ["navigation"],
-    docs: "https://hafizhmuzani.my.id/components/toc-minimap",
+    docs: "https://hafizhhh.dev/components/toc-minimap",
   },
   {
     name: "fluid-gradient-text",
@@ -625,7 +625,7 @@ export const components: Registry["items"] = [
       },
     ],
     categories: ["text-effects"],
-    docs: "https://hafizhmuzani.my.id/components/fluid-gradient-text",
+    docs: "https://hafizhhh.dev/components/fluid-gradient-text",
   },
   {
     name: "brand-assets-menu",
@@ -642,7 +642,7 @@ export const components: Registry["items"] = [
       },
     ],
     categories: ["menus"],
-    docs: "https://hafizhmuzani.my.id/components/brand-assets-menu",
+    docs: "https://hafizhhh.dev/components/brand-assets-menu",
   },
   {
     name: "icon-swap",
@@ -658,7 +658,7 @@ export const components: Registry["items"] = [
       },
     ],
     categories: ["effects"],
-    docs: "https://hafizhmuzani.my.id/components/icon-swap",
+    docs: "https://hafizhhh.dev/components/icon-swap",
   },
   {
     name: "dot-grid-spotlight",
@@ -674,7 +674,7 @@ export const components: Registry["items"] = [
       },
     ],
     categories: ["effects"],
-    docs: "https://hafizhmuzani.my.id/components/dot-grid-spotlight",
+    docs: "https://hafizhhh.dev/components/dot-grid-spotlight",
   },
   {
     name: "spinning-circular-text",
@@ -703,7 +703,7 @@ export const components: Registry["items"] = [
       },
     },
     categories: ["text-effects"],
-    docs: "https://hafizhmuzani.my.id/components/spinning-circular-text",
+    docs: "https://hafizhhh.dev/components/spinning-circular-text",
   },
   {
     name: "mobius-loop-icon",
@@ -720,7 +720,7 @@ export const components: Registry["items"] = [
       },
     ],
     categories: ["effects"],
-    docs: "https://hafizhmuzani.my.id/components/mobius-loop-icon",
+    docs: "https://hafizhhh.dev/components/mobius-loop-icon",
   },
   {
     name: "logos-carousel",
@@ -736,7 +736,7 @@ export const components: Registry["items"] = [
       },
     ],
     categories: ["marketing"],
-    docs: "https://hafizhmuzani.my.id/components/logos-carousel",
+    docs: "https://hafizhhh.dev/components/logos-carousel",
   },
   {
     name: "testimonial-2",
@@ -752,7 +752,7 @@ export const components: Registry["items"] = [
       },
     ],
     categories: ["marketing"],
-    docs: "https://hafizhmuzani.my.id/components/testimonial-2",
+    docs: "https://hafizhhh.dev/components/testimonial-2",
   },
   {
     name: "line-nav",
@@ -769,7 +769,7 @@ export const components: Registry["items"] = [
       },
     ],
     categories: ["navigation"],
-    docs: "https://hafizhmuzani.my.id/components/line-nav",
+    docs: "https://hafizhhh.dev/components/line-nav",
   },
   {
     name: "share-menu",
@@ -786,7 +786,7 @@ export const components: Registry["items"] = [
       },
     ],
     categories: ["menus"],
-    docs: "https://hafizhmuzani.my.id/components/share-menu",
+    docs: "https://hafizhhh.dev/components/share-menu",
   },
   {
     name: "spotlight-logo",
@@ -804,6 +804,6 @@ export const components: Registry["items"] = [
       },
     ],
     categories: ["effects"],
-    docs: "https://hafizhmuzani.my.id/components/spotlight-logo",
+    docs: "https://hafizhhh.dev/components/spotlight-logo",
   },
 ]

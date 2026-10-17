@@ -17,7 +17,7 @@ export const USER: User = {
   address: "Semarang, Indonesia",
   phoneNumberB64: "KzYyIDgyMyAyNzIzIDk0MjE=", // +62 823 2723 9421
   emailB64: "aGFmaXpobXV6YW5pMDExQGdtYWlsLmNvbQ==", // hafizhmuzani011@gmail.com
-  website: "https://hafizhmuzani.my.id",
+  website: "https://hafizhhh.dev",
   jobTitle: "Junior Full-Stack Developer",
   jobs: [
     {
