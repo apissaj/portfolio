@@ -5,7 +5,7 @@ import { USER } from "@/features/portfolio/data/user"
 
 export const SITE_INFO = {
   name: USER.displayName,
-  url: process.env.NEXT_PUBLIC_APP_URL || "https://hafizhmuzani.my.id",
+  url: process.env.NEXT_PUBLIC_APP_URL || "https://hafizhhh.dev",
   ogImage: USER.ogImage,
   description: USER.bio,
   keywords: USER.keywords,
@@ -39,11 +39,10 @@ export const MOBILE_NAV: NavItem<Route>[] = [
 export const X_HANDLE = ""
 export const GITHUB_USERNAME = "apissaj"
 export const SOURCE_CODE_GITHUB_REPO = "apissaj/portfolio"
-export const SOURCE_CODE_GITHUB_URL =
-  "https://github.com/apissaj/portfolio"
+export const SOURCE_CODE_GITHUB_URL = "https://github.com/apissaj/portfolio"
 
 export const SPONSORSHIP_URL = ""
 
 export const UTM_PARAMS = {
-  utm_source: "hafizhmuzani.my.id",
+  utm_source: "hafizhhh.dev",
 }

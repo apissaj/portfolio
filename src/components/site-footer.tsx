@@ -57,7 +57,7 @@ export function SiteFooter() {
                 <li>
                   <a
                     className="link-underline"
-                    href="https://openpanel.dev?utm_source=hafizhmuzani.my.id&utm_medium=referral&utm_campaign=footer"
+                    href="https://openpanel.dev?utm_source=hafizhhh.dev&utm_medium=referral&utm_campaign=footer"
                     target="_blank"
                     rel="noopener"
                   >

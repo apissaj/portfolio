@@ -4,7 +4,7 @@ import { getBlogPosts, getComponentDocs } from "@/features/doc/data/documents"
 const allComponents = getComponentDocs()
 const allPosts = getBlogPosts()
 
-const content = `# hafizhmuzani.my.id
+const content = `# hafizhhh.dev
 
 > A pixel-perfect dev portfolio.
 
