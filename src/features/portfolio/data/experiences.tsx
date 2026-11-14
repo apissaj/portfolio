@@ -15,7 +15,7 @@ export const EXPERIENCES: Experience[] = [
         },
         employmentType: "Freelance",
         description:
-          "- Build responsive websites and landing pages with HTML, CSS, JavaScript, React, and Next.js.\n- Create reusable UI components using a mobile-first approach.\n- Connect front ends to REST APIs and Firebase (authentication and data storage).\n- Build and run my own products, Portalink and Whip.",
+          "- Build responsive websites and landing pages with HTML, CSS, JavaScript, React, and Next.js.\n- Create reusable UI components using a mobile-first approach.\n- Connect front ends to REST APIs and Firebase (authentication and data storage).\n- Build and run my own products, Cloud Mail (self-hosted email platform on Cloudflare Workers) and KoncetCloud (self-hosted cloud backup manager powered by rclone).",
         skills: [
           "HTML",
           "CSS",
