@@ -25,13 +25,13 @@ const transition: Transition = {
  * Designed by ncdai on Figma with [Fast Isometric Plugin](https://www.figma.com/community/plugin/1249759048471403961).
  * Inspired by tailwindcss.com.
  */
-export function ChanhDaiMarkIsometric() {
+export function HafizhMarkIsometric() {
   const id = useId()
   const ids = {
-    facePattern: `ncdai-face-pattern-${id}`,
-    faceFill: `ncdai-face-fill-${id}`,
-    stroke: `ncdai-stroke-${id}`,
-    radialGradient: `ncdai-radial-gradient-${id}`,
+    facePattern: `hafizh-face-pattern-${id}`,
+    faceFill: `hafizh-face-fill-${id}`,
+    stroke: `hafizh-stroke-${id}`,
+    radialGradient: `hafizh-radial-gradient-${id}`,
   }
 
   const ref = useRef<SVGSVGElement>(null)

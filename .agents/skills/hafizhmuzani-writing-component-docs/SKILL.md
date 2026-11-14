@@ -1,5 +1,5 @@
 ---
-name: ncdai-writing-component-docs
+name: hafizhmuzani-writing-component-docs
 description: Write and review component documentation (MDX) and registry descriptions. Covers doc structure, description writing, Features, Composition, Credits, and References sections. Use when creating new component docs, updating descriptions, adding Features sections, adding Composition sections, adding Credits sections, adding References sections, or reviewing component documentation quality.
 ---
 
@@ -116,9 +116,9 @@ Skip `## Features` when the component is self-explanatory through its title + de
 
 The Scroll Fade Effect component is built on top of CSS animation-timeline.
 
-- 📱 Smooth scrolling fade effect
-- 🎨 Customizable with Tailwind CSS
-- ⚡️ Easy installation via shadcn CLI
+- ðŸ“± Smooth scrolling fade effect
+- ðŸŽ¨ Customizable with Tailwind CSS
+- âš¡ï¸ Easy installation via shadcn CLI
 ```
 
 Issues: wrong heading name, intro paragraph is unnecessary, emoji, "Easy installation" repeats Installation section.
@@ -139,7 +139,7 @@ Skip `## Composition` when the component is a single element used with props alo
 2. Place it immediately after `## Usage`.
 3. Start with the line: `Use the following composition to build a \`{ComponentName}\`.`
 4. Use a ` ```text ` fenced code block for the tree.
-5. Draw the tree using box-drawing characters: `├──`, `└──`, `│`.
+5. Draw the tree using box-drawing characters: `â”œâ”€â”€`, `â””â”€â”€`, `â”‚`.
 6. Show the full component hierarchy as it appears in the Usage JSX.
 7. If the component wraps sub-components from another package, include them in the tree.
 
@@ -153,10 +153,10 @@ Use the following composition to build a `SlideToUnlock`
 
 \```text
 SlideToUnlock
-└── SlideToUnlockTrack
-    ├── SlideToUnlockText
-    │   └── ShimmeringText
-    └── SlideToUnlockHandle
+â””â”€â”€ SlideToUnlockTrack
+    â”œâ”€â”€ SlideToUnlockText
+    â”‚   â””â”€â”€ ShimmeringText
+    â””â”€â”€ SlideToUnlockHandle
 \```
 ````
 
@@ -170,14 +170,14 @@ Use the following composition to build a `Testimonial`
 
 \```text
 Testimonial
-├── TestimonialQuote
-└── TestimonialAuthor
-    ├── TestimonialAvatar
-    │   ├── TestimonialAvatarImg
-    │   └── TestimonialAvatarRing
-    ├── TestimonialAuthorName
-    │   └── TestimonialVerifiedBadge
-    └── TestimonialAuthorTagline
+â”œâ”€â”€ TestimonialQuote
+â””â”€â”€ TestimonialAuthor
+    â”œâ”€â”€ TestimonialAvatar
+    â”‚   â”œâ”€â”€ TestimonialAvatarImg
+    â”‚   â””â”€â”€ TestimonialAvatarRing
+    â”œâ”€â”€ TestimonialAuthorName
+    â”‚   â””â”€â”€ TestimonialVerifiedBadge
+    â””â”€â”€ TestimonialAuthorTagline
 \```
 ````
 
@@ -248,7 +248,7 @@ Issue: this is technical implementation reading, so it belongs in `## References
 ```markdown
 ## Credits
 
-Thanks to everyone who inspired this component! ❤️
+Thanks to everyone who inspired this component! â¤ï¸
 
 - [Original glow effect demo by @jh3yy](https://x.com/jh3yy/status/1992003440579662211)
 ```
@@ -281,7 +281,7 @@ Pick the format that matches the kind of link:
 | Format                           | Use For                                                |
 | -------------------------------- | ------------------------------------------------------ |
 | `- [Title](url)`                 | Library docs, related component docs, web APIs.        |
-| `- [Title](url) — short context` | Clarify why this reference matters for this component. |
+| `- [Title](url) â€” short context` | Clarify why this reference matters for this component. |
 
 ### Good examples
 
@@ -289,7 +289,7 @@ Pick the format that matches the kind of link:
 ## References
 
 - [View Transition API](https://developer.mozilla.org/en-US/docs/Web/API/View_Transition_API)
-- [Motion Layout Animations](https://motion.dev/docs/react-layout-animations) — layout transition behavior
+- [Motion Layout Animations](https://motion.dev/docs/react-layout-animations) â€” layout transition behavior
 ```
 
 ```markdown
@@ -328,7 +328,7 @@ Each component in `src/registry/components/_registry.ts` must have a `descriptio
   type: "registry:component",
   description: "Same one-sentence description as MDX frontmatter.",
   title: "Component Name",
-  author: "ncdai <dai@chanhdai.com>",
+  author: "Hafizh Muzani <hafizhmuzani@users.noreply.github.com>",
   // ...
 }
 ```

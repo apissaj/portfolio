@@ -133,7 +133,7 @@ export function ViewOptions({
       },
       {
         title: "Open in GitHub",
-        href: `https://github.com/ncdai/chanhdai.com/blob/main/src/features/doc/content/${markdownUrl.replace(/^\//, "")}`,
+        href: `https://github.com/apissaj/portfolio/blob/main/src/features/doc/content/${markdownUrl.replace(/^\//, "")}`,
         icon: GitHubIcon,
       },
       {

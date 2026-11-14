@@ -19,15 +19,26 @@ export function ProjectItem({ project }: { project: Project }) {
     >
       <div className="relative h-52 w-full overflow-hidden rounded-2xl border border-line bg-zinc-50/70 sm:h-56 dark:bg-zinc-900/40">
         <div className="absolute inset-0 flex items-center justify-center p-4 [perspective:1000px]">
-          <div className="flex h-[115%] w-[108%] flex-col overflow-hidden rounded-xl border border-zinc-200 bg-white shadow-lg shadow-zinc-900/5 transition-transform duration-500 ease-out [transform:rotateX(10deg)_rotateY(-10deg)_rotateZ(1.5deg)_scale(1.02)] group-hover/project:[transform:rotateX(4deg)_rotateY(-4deg)_rotateZ(0.5deg)_scale(1.06)] dark:border-zinc-800 dark:bg-zinc-900">
+          <div className="flex h-[115%] w-[108%] [transform:rotateX(10deg)_rotateY(-10deg)_rotateZ(1.5deg)_scale(1.02)] flex-col overflow-hidden rounded-xl border border-zinc-200 bg-white shadow-lg shadow-zinc-900/5 transition-transform duration-500 ease-out group-hover/project:[transform:rotateX(4deg)_rotateY(-4deg)_rotateZ(0.5deg)_scale(1.06)] dark:border-zinc-800 dark:bg-zinc-900">
             <div className="flex h-5 shrink-0 items-center gap-1.5 border-b border-zinc-200 bg-zinc-100/90 px-2.5 dark:border-zinc-700/80 dark:bg-zinc-800/90">
               <span className="size-1.5 rounded-full bg-zinc-300" />
               <span className="size-1.5 rounded-full bg-zinc-300" />
               <span className="size-1.5 rounded-full bg-zinc-300" />
             </div>
-            <div className="flex flex-1 items-center justify-center p-3 font-mono text-xs text-zinc-500">
-              {project.title}
-            </div>
+            {project.image ? (
+              <div className="flex flex-1 items-center justify-center overflow-hidden p-2 sm:p-3">
+                <img
+                  src={project.image}
+                  alt={`${project.title} interface preview`}
+                  className="w-full rounded-md"
+                  loading="lazy"
+                />
+              </div>
+            ) : (
+              <div className="flex flex-1 items-center justify-center p-3 font-mono text-xs text-zinc-500">
+                {project.title}
+              </div>
+            )}
           </div>
         </div>
       </div>
@@ -52,6 +63,15 @@ export function ProjectItem({ project }: { project: Project }) {
         {project.description && (
           <div className="text-sm leading-relaxed text-zinc-600 dark:text-zinc-400 [&_p]:m-0">
             <Markdown>{project.description}</Markdown>
+          </div>
+        )}
+
+        {project.demo && (
+          <div className="flex items-center gap-2 rounded-md border border-line bg-zinc-50 px-2.5 py-1.5 font-mono text-xs text-zinc-600 dark:bg-zinc-900/40 dark:text-zinc-400">
+            <span className="shrink-0 text-zinc-400">demo:</span>
+            <code className="truncate">
+              {project.demo.username} / {project.demo.password}
+            </code>
           </div>
         )}
 

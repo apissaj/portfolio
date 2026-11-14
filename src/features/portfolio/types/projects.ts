@@ -20,6 +20,10 @@ export type Project = {
   description?: string
   /** Logo image URL (absolute or path under /public). */
   logo?: string
+  /** Screenshot image shown inside the browser mockup (path under /public). */
+  image?: string
   /** Whether the project card is expanded by default in the UI. */
   isExpanded?: boolean
+  /** Optional public demo credentials shown on the card. */
+  demo?: { username: string; password: string }
 }

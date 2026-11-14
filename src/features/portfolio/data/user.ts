@@ -7,12 +7,12 @@ export const USER: User = {
   username: "hafizhmuzani",
   gender: "male",
   pronouns: "he/him",
-  bio: "Junior full-stack developer from Semarang, Indonesia. I build web apps with React and Next.js, and I'm working on my own products, VPNX and Tempik.",
+  bio: "Junior full-stack developer from Semarang, Indonesia. I build web apps with React and Next.js, and open-source developer tools around proxies and automation.",
   flipSentences: [
     "React & Next.js Specialist",
     "Full-stack Developer",
     "IT Student @ UDINUS",
-    "Building VPNX & Tempik",
+    "Open-source tool builder",
   ],
   address: "Semarang, Indonesia",
   phoneNumberB64: "KzYyIDgyMyAyNzIzIDk0MjE=", // +62 823 2723 9421

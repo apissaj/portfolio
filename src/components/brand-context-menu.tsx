@@ -1,6 +1,5 @@
 "use client"
 
-import Link from "next/link"
 import { copyText } from "@/utils/copy"
 import { useTiks } from "@rexa-developer/tiks/react"
 import { Download, SquareDashed, Type } from "lucide-react"
@@ -14,8 +13,8 @@ import {
   ContextMenuTrigger,
 } from "@/components/base/ui/context-menu"
 
-import { ChanhDaiMark, getMarkSVG } from "./chanhdai-mark"
-import { getWordmarkSVG } from "./chanhdai-wordmark"
+import { getMarkSVG, HafizhMark } from "./hafizh-mark"
+import { getWordmarkSVG } from "./hafizh-wordmark"
 
 export function BrandContextMenu({ children }: { children: React.ReactNode }) {
   const { success } = useTiks()
@@ -32,7 +31,7 @@ export function BrandContextMenu({ children }: { children: React.ReactNode }) {
             success()
           }}
         >
-          <ChanhDaiMark />
+          <HafizhMark />
           Copy Mark as SVG
         </ContextMenuItem>
 
@@ -51,10 +50,14 @@ export function BrandContextMenu({ children }: { children: React.ReactNode }) {
 
         <ContextMenuItem
           render={
-            <Link href="/blog/chanhdai-brand">
+            <a
+              href="https://chanhdai.com/blog/chanhdai-brand"
+              target="_blank"
+              rel="noopener"
+            >
               <SquareDashed />
               Brand Guidelines
-            </Link>
+            </a>
           }
         />
 

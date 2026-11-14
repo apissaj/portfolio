@@ -2,39 +2,37 @@ import type { Project } from "../types/projects"
 
 export const PROJECTS: Project[] = [
   {
-    id: "vpnx",
-    title: "VPNX",
+    id: "cloud-mail",
+    title: "Cloud Mail",
     period: {
-      start: "05.2026",
+      start: "08.2025",
     },
-    link: "https://github.com/hafizhmuzani",
-    skills: ["Docker", "Network", "VPN", "Proxy Rotation"],
+    link: "https://mail.hafizhmuzani.my.id",
+    image: "/images/projects/cloud-mail-light.webp",
+    skills: ["Cloudflare Workers", "D1 Database", "Vue 3", "TypeScript"],
     description:
-      "Local Docker setup for VPNX proxy rotation and integration flow.",
+      "Self-hosted email platform on Cloudflare Workers: catch-all inbox, AI-powered OTP extraction, public API for automation.",
+    demo: {
+      username: "demo@hafizhmuzani.my.id",
+      password: "DemoPass2026",
+    },
     isExpanded: true,
   },
   {
-    id: "tempik",
-    title: "Tempik",
+    id: "koncetcloud",
+    title: "KoncetCloud",
     period: {
-      start: "04.2026",
+      start: "10.2025",
     },
-    link: "https://tempik.exse7en.fr",
-    skills: ["Cloudflare Workers", "D1 Database", "API", "TypeScript"],
+    link: "https://kc.koncetcloud.web.id/#drive",
+    image: "/images/projects/koncetcloud.webp",
+    skills: ["Vue 3", "Tailwind CSS", "Node.js", "rclone", "LocalSend"],
     description:
-      "Custom temporary email service with custom domains and live monitoring interface.",
+      "Self-hosted cloud backup & storage manager powered by rclone. Multi-remote support (50+ remotes), 1-hop LocalSend receiver from phone, 2FA TOTP, and live transfer monitoring.",
+    demo: {
+      username: "demo",
+      password: "demohvoUqMYI",
+    },
     isExpanded: true,
-  },
-  {
-    id: "qwencloud-generator",
-    title: "qwencloud-generator",
-    period: {
-      start: "03.2026",
-    },
-    link: "https://github.com/hafizhmuzani",
-    skills: ["Python", "Gmail API", "OAuth", "Automation"],
-    description:
-      "Custom tool utilizing Gmail API and OAuth tokens for automated flow setup.",
-    isExpanded: false,
   },
 ]

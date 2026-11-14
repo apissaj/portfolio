@@ -27,7 +27,7 @@ const EXPERIENCE: ExperienceItemType[] = [
     id: "shadcncraft",
     companyName: "shadcncraft",
     companyLogo: "https://assets.chanhdai.com/images/companies/shadcncraft.svg",
-    companyWebsite: "https://shadcncraft.com?atp=ncdai",
+    companyWebsite: "https://shadcncraft.com?atp=hafizhmuzani",
     positions: [
       {
         id: "1",

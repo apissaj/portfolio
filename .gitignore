@@ -41,8 +41,8 @@ yarn-error.log*
 *.tsbuildinfo
 next-env.d.ts
 
-# ncdai
-.ncdai
+# hafizhmuzani
+.hafizhmuzani
 
 # serena (MCP tooling, local-only)
 .serena/

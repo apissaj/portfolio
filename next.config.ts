@@ -54,7 +54,7 @@ const nextConfig: NextConfig = {
   reactStrictMode: true,
   typedRoutes: true,
   transpilePackages: ["next-mdx-remote"],
-  allowedDevOrigins: ["ncdai.localhost", "ncdai.local"],
+  allowedDevOrigins: ["hafizhhh.localhost", "hafizhhh.local"],
   devIndicators: false,
   images: {
     remotePatterns: [

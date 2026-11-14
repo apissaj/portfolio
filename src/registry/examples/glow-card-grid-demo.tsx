@@ -47,8 +47,8 @@ const CARDS = [
     avatar: "https://unavatar.io/x/emilkowalski",
   },
   {
-    name: "Chánh Đại",
-    handle: "@iamncdai",
-    avatar: "https://unavatar.io/x/iamncdai",
+    name: "Hafizh Muzani",
+    handle: "@hafizhmuzani",
+    avatar: "https://unavatar.io/x/apissaj",
   },
 ]

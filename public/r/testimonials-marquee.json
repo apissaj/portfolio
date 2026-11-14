@@ -2,14 +2,14 @@
   "$schema": "https://ui.shadcn.com/schema/registry-item.json",
   "name": "testimonials-marquee",
   "title": "Testimonials Marquee",
-  "author": "ncdai <dai@chanhdai.com>",
+  "author": "Hafizh Muzani <hafizhmuzani@users.noreply.github.com>",
   "description": "Scrolling marquee to showcase user testimonials.",
   "registryDependencies": [
     "@kibo-ui/marquee",
-    "https://chanhdai.com/r/testimonial.json"
+    "https://hafizhhh.dev/r/testimonial.json"
   ],
   "files": [],
-  "docs": "https://chanhdai.com/components/testimonials-marquee",
+  "docs": "https://hafizhhh.dev/components/testimonials-marquee",
   "categories": [
     "marketing"
   ],
