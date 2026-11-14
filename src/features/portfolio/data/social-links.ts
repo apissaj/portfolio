@@ -14,8 +14,8 @@ export const SOCIAL = {
   },
   linkedin: {
     title: "LinkedIn",
-    handle: "hafizhmuzani",
-    href: "https://linkedin.com/in/hafizhmuzani",
+    handle: "hafizmznn",
+    href: "https://www.linkedin.com/in/hafizmznn",
     sameAs: true,
   },
   youtube: {

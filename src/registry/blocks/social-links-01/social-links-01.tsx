@@ -85,7 +85,7 @@ const SOCIAL_LINKS: SocialLink[] = [
   {
     icon: "https://assets.chanhdai.com/images/link-icons/linkedin.webp",
     title: "LinkedIn",
-    href: "https://linkedin.com/in/hafizhmuzani",
+    href: "https://www.linkedin.com/in/hafizmznn",
   },
   {
     icon: "https://assets.chanhdai.com/images/link-icons/dailydotdev.webp",
