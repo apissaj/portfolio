@@ -38,7 +38,7 @@ export function Contact() {
           </a>
           <a
             className={BUTTON}
-            href={addQueryParams(USER.website, UTM_PARAMS)}
+            href="/cv/Hafizh-Muzani-Resume.pdf"
             target="_blank"
             rel="noopener"
           >
