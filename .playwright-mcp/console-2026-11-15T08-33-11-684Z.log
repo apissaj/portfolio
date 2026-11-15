@@ -1,2 +1,0 @@
-[    1215ms] [ERROR] Failed to load resource: the server responded with a status of 401 () @ https://api.openpanel.dev/track:1
-[    4282ms] [WARNING] The resource http://localhost:3105/_next/static/chunks/294clhn5_s2n9.css was preloaded using link preload but not used within a few seconds from the window's load event. Please make sure it has an appropriate `as` value and it is preloaded intentionally. @ http://localhost:3105/:1
