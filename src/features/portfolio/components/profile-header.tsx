@@ -66,12 +66,12 @@ export function ProfileHeader() {
 
       <div className="relative flex flex-wrap items-center gap-2 pt-1">
         <div className="pointer-events-none absolute -top-3.5 -left-20 hidden items-center gap-1 select-none sm:flex">
-          <span className="font-handwriting text-xl text-zinc-500 -rotate-6 dark:text-zinc-400">
+          <span className="-rotate-6 font-handwriting text-xl text-zinc-500 dark:text-zinc-400">
             follow me
           </span>
           <svg
             viewBox="0 0 28 28"
-            className="size-6 -rotate-6 stroke-current fill-none text-zinc-400 dark:text-zinc-500"
+            className="size-6 -rotate-6 fill-none stroke-current text-zinc-400 dark:text-zinc-500"
             strokeWidth="1.2"
             strokeLinecap="round"
             strokeLinejoin="round"

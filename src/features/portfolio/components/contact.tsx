@@ -1,8 +1,6 @@
 import { decodeEmail } from "@/utils/string"
-import { addQueryParams } from "@/utils/url"
 import { FileTextIcon, MailIcon } from "lucide-react"
 
-import { UTM_PARAMS } from "@/config/site"
 import { LinkedInIcon } from "@/components/icons"
 
 import { SOCIAL } from "../data/social-links"

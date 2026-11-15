@@ -66,15 +66,15 @@ Unused dependency confirmed:
 
 ## Commands you will need
 
-| Purpose           | Command                       | Expected on success               |
-| ----------------- | ----------------------------- | --------------------------------- |
-| Install           | `pnpm install`                | exit 0                            |
-| Audit (prod)      | `pnpm audit --prod`           | prints advisory summary           |
-| Why a package     | `pnpm why <pkg>`              | prints dependency paths           |
-| Outdated          | `pnpm outdated @c15t/nextjs`  | shows current vs latest           |
-| Update one dep    | `pnpm up @c15t/nextjs@latest` | updates within range / to latest  |
-| Build             | `pnpm build`                  | exit 0                            |
-| Registry validate | `pnpm registry:validate`      | exit 0                            |
+| Purpose           | Command                       | Expected on success                  |
+| ----------------- | ----------------------------- | ------------------------------------ |
+| Install           | `pnpm install`                | exit 0                               |
+| Audit (prod)      | `pnpm audit --prod`           | prints advisory summary              |
+| Why a package     | `pnpm why <pkg>`              | prints dependency paths              |
+| Outdated          | `pnpm outdated @c15t/nextjs`  | shows current vs latest              |
+| Update one dep    | `pnpm up @c15t/nextjs@latest` | updates within range / to latest     |
+| Build             | `pnpm build`                  | exit 0                               |
+| Registry validate | `pnpm registry:validate`      | exit 0                               |
 | Dev server        | `pnpm dev`                    | serves at https://hafizhhh.localhost |
 
 ## Scope

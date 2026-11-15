@@ -278,9 +278,9 @@ Skip `## References` when there are no high-value technical links beyond obvious
 
 Pick the format that matches the kind of link:
 
-| Format                           | Use For                                                |
-| -------------------------------- | ------------------------------------------------------ |
-| `- [Title](url)`                 | Library docs, related component docs, web APIs.        |
+| Format                             | Use For                                                |
+| ---------------------------------- | ------------------------------------------------------ |
+| `- [Title](url)`                   | Library docs, related component docs, web APIs.        |
 | `- [Title](url) â€” short context` | Clarify why this reference matters for this component. |
 
 ### Good examples

@@ -22,7 +22,7 @@ export function Projects() {
         </PanelTitle>
       </PanelHeader>
 
-      <div className="grid grid-cols-1 divide-y md:grid-cols-2 md:divide-x md:divide-y-0 divide-border">
+      <div className="grid grid-cols-1 divide-y divide-border md:grid-cols-2 md:divide-x md:divide-y-0">
         {PROJECTS.map((project) => (
           <ProjectItem key={project.id} project={project} />
         ))}

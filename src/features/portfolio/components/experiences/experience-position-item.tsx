@@ -1,5 +1,5 @@
 import { differenceInMonths, format, parse } from "date-fns"
-import { CodeXmlIcon, ChevronDownIcon } from "lucide-react"
+import { ChevronDownIcon, CodeXmlIcon } from "lucide-react"
 
 import { cn } from "@/lib/utils"
 import { Tag } from "@/components/ui/tag"
@@ -29,7 +29,7 @@ export function ExperiencePositionItem({
       <CollapsibleTrigger
         className={cn(
           "group/trigger flex w-full cursor-pointer flex-col gap-1 rounded-lg p-1 text-left transition-colors",
-          "hover:bg-accent-muted outline-none focus-visible:ring-2 focus-visible:ring-ring/50",
+          "outline-none hover:bg-accent-muted focus-visible:ring-2 focus-visible:ring-ring/50",
           "data-disabled:cursor-default data-disabled:hover:bg-transparent"
         )}
       >
@@ -44,7 +44,7 @@ export function ExperiencePositionItem({
           </div>
 
           <ChevronDownIcon
-            className="size-4 shrink-0 text-zinc-400 transition-transform duration-200 dark:text-zinc-500 group-data-open/trigger:rotate-180 group-data-disabled/trigger:hidden"
+            className="size-4 shrink-0 text-zinc-400 transition-transform duration-200 group-data-open/trigger:rotate-180 group-data-disabled/trigger:hidden dark:text-zinc-500"
             aria-hidden
           />
         </div>
@@ -76,8 +76,8 @@ export function ExperiencePositionItem({
 
       <CollapsibleContent className="overflow-hidden">
         {position.description && (
-          <div className="pr-2 pt-2 pb-1 pl-8">
-            <div className="text-sm text-muted-foreground [&_p]:m-0 [&_ul]:m-0 [&_ul]:flex [&_ul]:flex-col [&_ul]:gap-1.5 [&_li]:flex [&_li]:items-start [&_li]:gap-2 [&_li]:before:mt-px [&_li]:before:shrink-0 [&_li]:before:text-zinc-400 [&_li]:before:select-none [&_li]:before:content-['•']">
+          <div className="pt-2 pr-2 pb-1 pl-8">
+            <div className="text-sm text-muted-foreground [&_li]:flex [&_li]:items-start [&_li]:gap-2 [&_li]:before:mt-px [&_li]:before:shrink-0 [&_li]:before:text-zinc-400 [&_li]:before:content-['•'] [&_li]:before:select-none [&_p]:m-0 [&_ul]:m-0 [&_ul]:flex [&_ul]:flex-col [&_ul]:gap-1.5">
               <Markdown>{position.description}</Markdown>
             </div>
           </div>

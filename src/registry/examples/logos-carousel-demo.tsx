@@ -1,11 +1,17 @@
 import { LogosCarousel } from "@/registry/components/logos-carousel"
-import { SPONSORS } from "@/features/sponsor/data"
+
+const LOGOS = ["Acme", "Globex", "Umbrella", "Initech", "Hooli", "Stark"]
 
 export default function LogosCarouselDemo() {
   return (
     <LogosCarousel className="w-full py-4 text-foreground">
-      {SPONSORS.map((sponsor, index) => (
-        <sponsor.logo key={index} className="h-auto w-full scale-105" />
+      {LOGOS.map((logo) => (
+        <span
+          key={logo}
+          className="font-mono text-lg font-semibold tracking-tight"
+        >
+          {logo}
+        </span>
       ))}
     </LogosCarousel>
   )

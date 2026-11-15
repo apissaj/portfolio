@@ -8,7 +8,6 @@ Portfolio pribadi **Hafizh Muzani** — dibangun dengan Next.js 16, Tailwind CSS
 
 - Light/Dark themes
 - SEO optimized (JSON-LD schema, sitemap, robots)
-- AI-ready dengan [/llms.txt](https://llmstxt.org)
 - Installable sebagai PWA
 
 ## Proyek yang Dipamerkan
