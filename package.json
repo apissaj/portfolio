@@ -38,7 +38,6 @@
     "capture:sync": "bun run ./src/scripts/capture-sync.mts",
     "icons:dev": "bun run ./src/scripts/build-icons.ts --watch",
     "icons:build": "bun run ./src/scripts/build-icons.ts",
-    "icons:pwa": "bun run ./src/scripts/build-pwa-icons.mts",
     "generate-libphonenumber-metadata": "libphonenumber-metadata-generator ./src/assets/libphonenumber.metadata.json --countries VN --extended",
     "upgrade:next": "npx @next/codemod@latest upgrade latest",
     "upgrade:tailwind": "npx @tailwindcss/upgrade@latest",
